@@ -1,0 +1,16 @@
+sudo: false
+branches:
+  only:
+    - master
+cache:
+  directories:
+    - node_modules
+language: node_js
+node_js:
+  - 4.1
+  - 4.0
+  - 0.12
+before_script:
+  - "export PATH=$HOME/node_modules/.bin:$PATH"
+script:
+  - gulp
