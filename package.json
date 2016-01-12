@@ -1,6 +1,6 @@
 {
   "name": "hubot-octopus-deploy",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Hubot commands for managing an Octopus Deploy server",
   "main": "index.coffee",
   "scripts": {
