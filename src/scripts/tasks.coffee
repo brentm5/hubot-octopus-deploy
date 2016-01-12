@@ -38,7 +38,7 @@ module.exports = (robot) ->
     .then(HttpHelpers.getBody)
     .then (body) ->
       tasks = (formatTask task for task in body.Items)
-      msg.send "#{body.TotalResults} tasks are running\n #{tasks.join("\n")}"
+      msg.send "#{body.TotalResults} tasks are running\n#{tasks.join("\n")}"
 
   robot.respond /octo last (\d+) tasks/i, (msg) ->
     totalTasks = Math.abs(Math.min(30, msg.match[1]))
