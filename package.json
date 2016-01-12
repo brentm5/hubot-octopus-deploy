@@ -1,0 +1,36 @@
+{
+  "name": "hubot-octopus-deploy",
+  "version": "0.0.1",
+  "description": "Hubot commands for managing an Octopus Deploy server",
+  "main": "index.coffee",
+  "scripts": {
+    "test": "node_modules/.bin/gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bigbam505/hubot-octopus-deploy.git"
+  },
+  "keywords": [
+    "hubot",
+    "hubot-scripts",
+    "octopus-deploy"
+  ],
+  "author": "Brent Montague <brent@bmontague.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/bigbam505/hubot-octopus-deploy/issues"
+  },
+  "homepage": "https://github.com/bigbam505/hubot-octopus-deploy#readme",
+  "dependencies": {
+    "octopus-deploy-client": "^0.1.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-coffeelint": "^0.6.0",
+    "gulp-mocha": "^2.2.0",
+    "gulp-release-tasks": "0.0.3",
+    "hubot": "^2.17.0",
+    "hubot-test-helper": "^1.4.3",
+    "should": "^8.1.1"
+  }
+}
