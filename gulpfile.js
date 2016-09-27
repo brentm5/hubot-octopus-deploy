@@ -1,3 +1,5 @@
+require('coffee-script/register');
+
 var gulp = require('gulp'),
     mocha = require('gulp-mocha'),
     coffeelint = require('gulp-coffeelint'),
@@ -8,7 +10,7 @@ releaseTasks(gulp);
 
 var paths = {
     scripts: ['index.coffee', 'src/**/*.coffee'],
-    tests: ['test/**/*.js']
+    tests: ['test/**/*.coffee']
   };
 
 gulp.task('lint', function () {
