@@ -3,42 +3,17 @@
     "Id": "Projects-100",
     "Name": "Billing (only one release)",
     "Slug": "billing",
-    "ProjectGroupId": "ProjectGroups-1",
-    "Links": {
-      "Self": "/api/projects/Projects-100"
-    }
+    "ProjectGroupId": "ProjectGroups-1"
   }, {
     "Id": "Projects-201",
     "Name": "HelloWorld (first previous, rest has current with previous)",
     "Slug": "app-hello-world",
-    "ProjectGroupId": "ProjectGroups-2",
-    "Links": {
-      "Self": "/api/projects/Projects-201"
-    }
-  }, {
-    "Id": "Projects-101",
-    "Name": "Service.Centre (two envs with diff versions)",
-    "Slug": "service-centre",
-    "ProjectGroupId": "ProjectGroups-1",
-    "Links": {
-      "Self": "/api/projects/Projects-101"
-    }
+    "ProjectGroupId": "ProjectGroups-2"
   }, {
     "Id": "Projects-202",
-    "Name": "Foo.Bar.Endpoint (two envs both fails)",
+    "Name": "Foo.Bar.Endpoint (no environments)",
     "Slug": "foo-bar-endpoint",
-    "ProjectGroupId": "ProjectGroups-2",
-    "Links": {
-      "Self": "/api/projects/Projects-202"
-    }
-  }, {
-    "Id": "Projects-200",
-    "Name": "ShopCart.Service (no releases on environment but has latest on release-testdata)",
-    "Slug": "shop-cart-service",
-    "ProjectGroupId": "ProjectGroups-2",
-    "Links": {
-      "Self": "/api/projects/Projects-200"
-    }
+    "ProjectGroupId": "ProjectGroups-2"
   }],
   "ProjectGroups": [{
     "Id": "ProjectGroups-1",
@@ -46,10 +21,7 @@
     "EnvironmentIds": [
       "Environments-1",
       "Environments-4"
-    ],
-    "Links": {
-      "Self": "/api/projectgroups/ProjectGroups-1"
-    }
+    ]
   }, {
     "Id": "ProjectGroups-2",
     "Name": "Test Stuff",
@@ -57,293 +29,78 @@
       "Environments-2",
       "Environments-1",
       "Environments-5",
-      "Environments-4",
-      "Environments-3"
-    ],
-    "Links": {
-      "Self": "/api/projectgroups/ProjectGroups-2"
-    }
+      "Environments-4"
+    ]
   }, {
     "Id": "ProjectGroups-3",
     "Name": "Unused",
     "EnvironmentIds": [
       "Environments-23"
-    ],
-    "Links": {
-      "Self": "/api/projectgroups/ProjectGroups-103"
-    }
+    ]
   }],
   "Environments": [{
     "Id": "Environments-2",
-    "Name": "Corporate",
-    "Links": {
-      "Self": "/api/environments/Environments-2"
-    }
+    "Name": "Corporate"
   }, {
     "Id": "Environments-1",
-    "Name": "DI",
-    "Links": {
-      "Self": "/api/environments/Environments-1"
-    }
+    "Name": "DI"
   }, {
     "Id": "Environments-5",
-    "Name": "DI-TI",
-    "Links": {
-      "Self": "/api/environments/Environments-5"
-    }
+    "Name": "DI-TI"
   }, {
     "Id": "Environments-4",
-    "Name": "TI",
-    "Links": {
-      "Self": "/api/environments/Environments-4"
-    }
-  }, {
-    "Id": "Environments-3",
-    "Name": "PR",
-    "Links": {
-      "Self": "/api/environments/Environments-3"
-    }
+    "Name": "TI"
   }],
   "Items": [{
     "Id": "Deployments-10165",
     "ProjectId": "Projects-100",
     "EnvironmentId": "Environments-1",
-    "ReleaseId": "Releases-8762",
-    "DeploymentId": "Deployments-10165",
-    "TaskId": "ServerTasks-16512",
     "ReleaseVersion": "0.0.1-current",
-    "Created": "2015-10-12T12:56:59.645+11:00",
-    "QueueTime": "2015-10-12T12:56:59.614+11:00",
-    "CompletedTime": "2015-10-12T12:57:14.255+11:00",
     "State": "Success",
-    "HasPendingInterruptions": false,
     "HasWarningsOrErrors": false,
-    "ErrorMessage": "",
-    "Duration": "15 seconds",
     "IsCurrent": true,
     "IsPrevious": false,
-    "IsCompleted": true,
-    "Links": {
-      "Self": "/api/deployments/Deployments-10165",
-      "Release": "/api/releases/Releases-8762",
-      "Task": "/api/tasks/ServerTasks-16512"
-    }
+    "IsCompleted": true
   }, {
     "Id": "Deployments-10218",
     "ProjectId": "Projects-201",
     "EnvironmentId": "Environments-2",
-    "ReleaseId": "Releases-8763",
-    "DeploymentId": "Deployments-10218",
-    "TaskId": "ServerTasks-16565",
     "ReleaseVersion": "0.0.1-previous",
-    "Created": "2015-10-13T14:59:20.916+11:00",
-    "QueueTime": "2015-10-13T14:59:20.885+11:00",
-    "CompletedTime": "2015-10-13T14:59:30.588+11:00",
     "State": "Success",
-    "HasPendingInterruptions": false,
     "HasWarningsOrErrors": false,
-    "ErrorMessage": "",
-    "Duration": "10 seconds",
     "IsCurrent": false,
     "IsPrevious": true,
-    "IsCompleted": false,
-    "Links": {
-      "Self": "/api/deployments/Deployments-10218",
-      "Release": "/api/releases/Releases-8763",
-      "Task": "/api/tasks/ServerTasks-16565"
-    }
+    "IsCompleted": false
   }, {
     "Id": "Deployments-10166",
     "ProjectId": "Projects-201",
     "EnvironmentId": "Environments-1",
-    "ReleaseId": "Releases-8763",
-    "DeploymentId": "Deployments-10166",
-    "TaskId": "ServerTasks-16513",
     "ReleaseVersion": "0.0.2-current",
-    "Created": "2015-10-12T12:57:48.364+11:00",
-    "QueueTime": "2015-10-12T12:57:48.349+11:00",
-    "CompletedTime": "2015-10-12T12:58:01.974+11:00",
     "State": "Success",
-    "HasPendingInterruptions": false,
     "HasWarningsOrErrors": false,
-    "ErrorMessage": "",
-    "Duration": "14 seconds",
     "IsCurrent": true,
     "IsPrevious": false,
-    "IsCompleted": true,
-    "Links": {
-      "Self": "/api/deployments/Deployments-10166",
-      "Release": "/api/releases/Releases-8763",
-      "Task": "/api/tasks/ServerTasks-16513"
-    }
+    "IsCompleted": true
   }, {
     "Id": "Deployments-10177",
     "ProjectId": "Projects-201",
     "EnvironmentId": "Environments-1",
-    "ReleaseId": "Releases-8763",
-    "DeploymentId": "Deployments-10177",
-    "TaskId": "ServerTasks-16525",
     "ReleaseVersion": "0.0.1-previous",
-    "Created": "2015-10-12T15:19:40.217+11:00",
-    "QueueTime": "2015-10-12T15:19:40.201+11:00",
-    "CompletedTime": "2015-10-12T15:19:53.889+11:00",
     "State": "Success",
-    "HasPendingInterruptions": false,
     "HasWarningsOrErrors": false,
-    "ErrorMessage": "",
-    "Duration": "14 seconds",
     "IsCurrent": false,
     "IsPrevious": true,
-    "IsCompleted": true,
-    "Links": {
-      "Self": "/api/deployments/Deployments-10177",
-      "Release": "/api/releases/Releases-8763",
-      "Task": "/api/tasks/ServerTasks-16525"
-    }
+    "IsCompleted": true
   }, {
     "Id": "Deployments-10178",
     "ProjectId": "Projects-201",
     "EnvironmentId": "Environments-5",
-    "ReleaseId": "Releases-8762",
-    "DeploymentId": "Deployments-10178",
-    "TaskId": "ServerTasks-16526",
     "ReleaseVersion": "0.0.1-current",
-    "Created": "2015-10-12T15:19:51.592+11:00",
-    "QueueTime": "2015-10-12T15:19:51.576+11:00",
-    "CompletedTime": "2015-10-12T15:20:01.108+11:00",
     "State": "Success",
-    "HasPendingInterruptions": false,
     "HasWarningsOrErrors": false,
-    "ErrorMessage": "",
-    "Duration": "10 seconds",
     "IsCurrent": true,
     "IsPrevious": false,
-    "IsCompleted": true,
-    "Links": {
-      "Self": "/api/deployments/Deployments-10178",
-      "Release": "/api/releases/Releases-8762",
-      "Task": "/api/tasks/ServerTasks-16526"
-    }
-  }, {
-    "Id": "Deployments-10219",
-    "ProjectId": "Projects-101",
-    "EnvironmentId": "Environments-1",
-    "ReleaseId": "Releases-8762",
-    "DeploymentId": "Deployments-10219",
-    "TaskId": "ServerTasks-16566",
-    "ReleaseVersion": "0.0.2-current",
-    "Created": "2015-10-13T14:59:36.260+11:00",
-    "QueueTime": "2015-10-13T14:59:36.229+11:00",
-    "CompletedTime": "2015-10-13T14:59:46.995+11:00",
-    "State": "Success",
-    "HasPendingInterruptions": false,
-    "HasWarningsOrErrors": false,
-    "ErrorMessage": "",
-    "Duration": "11 seconds",
-    "IsCurrent": true,
-    "IsPrevious": false,
-    "IsCompleted": true,
-    "Links": {
-      "Self": "/api/deployments/Deployments-10219",
-      "Release": "/api/releases/Releases-8762",
-      "Task": "/api/tasks/ServerTasks-16566"
-    }
-  }, {
-    "Id": "Deployments-10308",
-    "ProjectId": "Projects-101",
-    "EnvironmentId": "Environments-4",
-    "ReleaseId": "Releases-8623",
-    "DeploymentId": "Deployments-10308",
-    "TaskId": "ServerTasks-16658",
-    "ReleaseVersion": "0.0.1-current",
-    "Created": "2015-10-15T15:25:07.732+11:00",
-    "QueueTime": "2015-10-15T15:25:07.717+11:00",
-    "CompletedTime": "2015-10-15T15:26:22.452+11:00",
-    "State": "Success",
-    "HasPendingInterruptions": false,
-    "HasWarningsOrErrors": false,
-    "ErrorMessage": "",
-    "Duration": "1 minute",
-    "IsCurrent": true,
-    "IsPrevious": false,
-    "IsCompleted": true,
-    "Links": {
-      "Self": "/api/deployments/Deployments-10308",
-      "Release": "/api/releases/Releases-8623",
-      "Task": "/api/tasks/ServerTasks-16658"
-    }
-  }, {
-    "Id": "Deployments-10309",
-    "ProjectId": "Projects-200",
-    "EnvironmentId": "Environments-2",
-    "ReleaseId": "Releases-8623",
-    "DeploymentId": "Deployments-10309",
-    "TaskId": "ServerTasks-16659",
-    "ReleaseVersion": "0.0.2-current",
-    "Created": "2015-10-15T15:27:08.608+11:00",
-    "QueueTime": "2015-10-15T15:27:08.593+11:00",
-    "CompletedTime": "2015-10-15T15:28:11.124+11:00",
-    "State": "Failed",
-    "HasPendingInterruptions": false,
-    "HasWarningsOrErrors": true,
-    "ErrorMessage": "",
-    "Duration": "9 seconds",
-    "IsCurrent": true,
-    "IsPrevious": false,
-    "IsCompleted": true,
-    "Links": {
-      "Self": "/api/deployments/Deployments-10309",
-      "Release": "/api/releases/Releases-8623",
-      "Task": "/api/tasks/ServerTasks-16659"
-    }
-  }, {
-    "Id": "Deployments-10321",
-    "ProjectId": "Projects-200",
-    "EnvironmentId": "Environments-2",
-    "ReleaseId": "Releases-8599",
-    "DeploymentId": "Deployments-10321",
-    "TaskId": "ServerTasks-16671",
-    "ReleaseVersion": "0.0.1-previous",
-    "Created": "2015-10-15T18:11:11.040+11:00",
-    "QueueTime": "2015-10-15T18:11:10.915+11:00",
-    "CompletedTime": "2015-10-15T18:11:20.555+11:00",
-    "State": "Success",
-    "HasPendingInterruptions": false,
-    "HasWarningsOrErrors": false,
-    "ErrorMessage": "",
-    "Duration": "10 seconds",
-    "IsCurrent": false,
-    "IsPrevious": true,
-    "IsCompleted": true,
-    "Links": {
-      "Self": "/api/deployments/Deployments-10321",
-      "Release": "/api/releases/Releases-8599",
-      "Task": "/api/tasks/ServerTasks-16671"
-    }
-  }, {
-    "Id": "Deployments-10322",
-    "ProjectId": "Projects-200",
-    "EnvironmentId": "Environments-1",
-    "ReleaseId": "Releases-8599",
-    "DeploymentId": "Deployments-10322",
-    "TaskId": "ServerTasks-16672",
-    "ReleaseVersion": "0.0.2-current",
-    "Created": "2015-10-15T18:11:11.024+11:00",
-    "QueueTime": "2015-10-15T18:11:10.899+11:00",
-    "CompletedTime": "2015-10-15T18:11:25.915+11:00",
-    "State": "Failed",
-    "HasPendingInterruptions": false,
-    "HasWarningsOrErrors": true,
-    "ErrorMessage": "",
-    "Duration": "9 seconds",
-    "IsCurrent": true,
-    "IsPrevious": false,
-    "IsCompleted": true,
-    "Links": {
-      "Self": "/api/deployments/Deployments-10322",
-      "Release": "/api/releases/Releases-8599",
-      "Task": "/api/tasks/ServerTasks-16672"
-    }
+    "IsCompleted": true
   }],
   "Links": {}
 }

@@ -7,112 +7,14 @@
     {
       "Id": "Releases-2",
       "Assembled": "2016-10-12T23:05:36.565+00:00",
-      "ReleaseNotes": null,
       "ProjectId": "Projects-200",
-      "ChannelId": "Channels-823",
-      "ProjectVariableSetSnapshotId": "variablesetstuff",
-      "LibraryVariableSetSnapshotIds": [
-        "variableset-LibraryVariableSets-102-s-10-PF6RH",
-        "variableset-LibraryVariableSets-104-s-28-BYGBR",
-        "variableset-LibraryVariableSets-61-s-37-24KG4",
-        "variableset-LibraryVariableSets-64-s-91-RHNHG",
-        "variableset-LibraryVariableSets-71-s-28-B8LF2",
-        "variableset-LibraryVariableSets-72-snapshot-1",
-        "variableset-LibraryVariableSets-78-s-10-UGRKG",
-        "variableset-LibraryVariableSets-82-s-7-EML8H",
-        "variableset-LibraryVariableSets-83-s-34-NT7TN",
-        "variableset-LibraryVariableSets-84-s-8-BF48F"
-      ],
-      "ProjectDeploymentProcessSnapshotId": "deploymentprocess-Projects-200-s-35-NQ6YV",
-      "SelectedPackages": [
-        {
-          "StepName": "Database Migration",
-          "Version": "0.1.0.219"
-        },
-        {
-          "StepName": "Deploy",
-          "Version": "0.1.0.219"
-        },
-        {
-          "StepName": "Import Data",
-          "Version": "0.1.0.219"
-        }
-      ],
-      "Version": "2.0.0",
-      "Links": {
-        "Self": "/api/releases/Releases-2{?force}",
-        "Project": "/api/projects/Projects-200",
-        "Progression": "/api/releases/Releases-2/progression",
-        "Deployments": "/api/releases/Releases-2/deployments{?skip}",
-        "DeploymentTemplate": "/api/releases/Releases-2/deployments/template",
-        "Artifacts": "/api/artifacts?regarding=Releases-2",
-        "ProjectVariableSnapshot": "/api/variables/variableset-Projects-200-s-10-NQ5M4",
-        "ProjectDeploymentProcessSnapshot": "/api/deploymentprocesses/deploymentprocess-Projects-200-s-35-NQ6YV",
-        "Web": "/app#/releases/Releases-2",
-        "SnapshotVariables": "/api/releases/Releases-2/snapshot-variables",
-        "Defects": "/api/releases/Releases-2/defects",
-        "ReportDefect": "/api/releases/Releases-2/defects",
-        "ResolveDefect": "/api/releases/Releases-2/defects/resolve"
-      }
+      "Version": "2.0.0"
     },
     {
       "Id": "Releases-1",
       "Assembled": "2016-10-12T01:40:28.716+00:00",
-      "ReleaseNotes": null,
       "ProjectId": "Projects-200",
-      "ChannelId": "Channels-823",
-      "ProjectVariableSetSnapshotId": "variableset-Projects-200-s-10-NQ5M4",
-      "LibraryVariableSetSnapshotIds": [
-        "variableset-LibraryVariableSets-102-s-10-PF6RH",
-        "variableset-LibraryVariableSets-104-s-28-BYGBR",
-        "variableset-LibraryVariableSets-61-s-37-24KG4",
-        "variableset-LibraryVariableSets-64-s-91-RHNHG",
-        "variableset-LibraryVariableSets-71-s-28-B8LF2",
-        "variableset-LibraryVariableSets-72-snapshot-1",
-        "variableset-LibraryVariableSets-78-s-10-UGRKG",
-        "variableset-LibraryVariableSets-82-s-7-EML8H",
-        "variableset-LibraryVariableSets-83-s-34-NT7TN",
-        "variableset-LibraryVariableSets-84-s-8-BF48F"
-      ],
-      "ProjectDeploymentProcessSnapshotId": "deploymentprocess-Projects-200-s-35-NQ6YV",
-      "SelectedPackages": [
-        {
-          "StepName": "Database Migration",
-          "Version": "0.1.0.217"
-        },
-        {
-          "StepName": "Deploy",
-          "Version": "0.1.0.217"
-        },
-        {
-          "StepName": "Import Data",
-          "Version": "0.1.0.217"
-        }
-      ],
-      "Version": "0.1.0.217",
-      "Links": {
-        "Self": "/api/releases/Releases-1{?force}",
-        "Project": "/api/projects/Projects-200",
-        "Progression": "/api/releases/Releases-1/progression",
-        "Deployments": "/api/releases/Releases-1/deployments{?skip}",
-        "DeploymentTemplate": "/api/releases/Releases-1/deployments/template",
-        "Artifacts": "/api/artifacts?regarding=Releases-1",
-        "ProjectVariableSnapshot": "/api/variables/variableset-Projects-200-s-10-NQ5M4",
-        "ProjectDeploymentProcessSnapshot": "/api/deploymentprocesses/deploymentprocess-Projects-200-s-35-NQ6YV",
-        "Web": "/app#/releases/Releases-1",
-        "SnapshotVariables": "/api/releases/Releases-1/snapshot-variables",
-        "Defects": "/api/releases/Releases-1/defects",
-        "ReportDefect": "/api/releases/Releases-1/defects",
-        "ResolveDefect": "/api/releases/Releases-1/defects/resolve"
-      }
+      "Version": "0.1.0.217"
     }
-  ],
-  "Links": {
-    "Self": "/api/projects/Projects-200/releases",
-    "Template": "/api/projects/Projects-200/releases",
-    "Page.Next": "/api/projects/Projects-200/releases?skip=30",
-    "Page.Current": "/api/projects/Projects-200/releases?skip=0",
-    "Page.0": "/api/projects/Projects-200/releases?skip=0",
-    "Page.1": "/api/projects/Projects-200/releases?skip=30"
-  }
+  ]
 }
