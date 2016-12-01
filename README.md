@@ -1,13 +1,19 @@
-# hubot-octopus-deploy
-Hubot commands for managing octopus deploy
+hubot-octopus-deploy
+======================
 
-See [`src/scripts/tasks.coffee`](src/scripts/tasks.coffee) for full documentation.
+[![Travis branch](https://img.shields.io/travis/brentm5/hubot-octopus-deploy/master.svg?style=flat-square)](https://github.com/brentm5/hubot-octopus-deploy) [![npm](https://img.shields.io/npm/v/hubot-octopus-deploy.svg?style=flat-square)](https://www.npmjs.com/package/hubot-octopus-deploy)
+
+
+Hubot commands for interacting with Octopus Deploy.  More information about whats provided can be found below.
+
 
 ## Installation
 
 In hubot project repo, run:
 
-`npm install hubot-octopus-deploy --save`
+```bash
+npm install hubot-octopus-deploy --save
+```
 
 Then add **hubot-octopus-deploy** to your `external-scripts.json`:
 
@@ -16,6 +22,18 @@ Then add **hubot-octopus-deploy** to your `external-scripts.json`:
   "hubot-octopus-deploy"
 ]
 ```
+
+
+## Configuration
+
+### HUBOT_OCTO_ENDPOINT
+
+This environment variable is the base url of your octopus installation. For example, `http://octopus.whereeveritcouldbe`
+
+### HUBOT_OCTO_APIKEY
+
+The octopus api key needed to call the octopus API
+
 
 ## Sample Interaction
 
@@ -44,15 +62,6 @@ hubot>> Retrieving status for you now...
          ms2.Endpoint  0.1.0 (ok)   0.1.0 (success)   unknown (unknown)   unknown (unknown)   unknown (unknown) 
 ```
 
-## Configuration
-
-### HUBOT_OCTO_ENDPOINT
-
-This environment variable is the base url of your octopus installation. For example, `http://octopus.whereeveritcouldbe`
-
-### HUBOT_OCTO_APIKEY
-
-The octopus api key needed to call the octopus API
 
 ## NPM Module
 
