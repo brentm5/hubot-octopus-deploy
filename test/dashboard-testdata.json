@@ -1,0 +1,106 @@
+{
+  "Projects": [{
+    "Id": "Projects-100",
+    "Name": "Billing (only one release)",
+    "Slug": "billing",
+    "ProjectGroupId": "ProjectGroups-1"
+  }, {
+    "Id": "Projects-201",
+    "Name": "HelloWorld (first previous, rest has current with previous)",
+    "Slug": "app-hello-world",
+    "ProjectGroupId": "ProjectGroups-2"
+  }, {
+    "Id": "Projects-202",
+    "Name": "Foo.Bar.Endpoint (no environments)",
+    "Slug": "foo-bar-endpoint",
+    "ProjectGroupId": "ProjectGroups-2"
+  }],
+  "ProjectGroups": [{
+    "Id": "ProjectGroups-1",
+    "Name": "Fake Projects",
+    "EnvironmentIds": [
+      "Environments-1",
+      "Environments-4"
+    ]
+  }, {
+    "Id": "ProjectGroups-2",
+    "Name": "Test Stuff",
+    "EnvironmentIds": [
+      "Environments-2",
+      "Environments-1",
+      "Environments-5",
+      "Environments-4"
+    ]
+  }, {
+    "Id": "ProjectGroups-3",
+    "Name": "Unused",
+    "EnvironmentIds": [
+      "Environments-23"
+    ]
+  }],
+  "Environments": [{
+    "Id": "Environments-2",
+    "Name": "Corporate"
+  }, {
+    "Id": "Environments-1",
+    "Name": "DI"
+  }, {
+    "Id": "Environments-5",
+    "Name": "DI-TI"
+  }, {
+    "Id": "Environments-4",
+    "Name": "TI"
+  }],
+  "Items": [{
+    "Id": "Deployments-10165",
+    "ProjectId": "Projects-100",
+    "EnvironmentId": "Environments-1",
+    "ReleaseVersion": "0.0.1-current",
+    "State": "Success",
+    "HasWarningsOrErrors": false,
+    "IsCurrent": true,
+    "IsPrevious": false,
+    "IsCompleted": true
+  }, {
+    "Id": "Deployments-10218",
+    "ProjectId": "Projects-201",
+    "EnvironmentId": "Environments-2",
+    "ReleaseVersion": "0.0.1-previous",
+    "State": "Success",
+    "HasWarningsOrErrors": false,
+    "IsCurrent": false,
+    "IsPrevious": true,
+    "IsCompleted": false
+  }, {
+    "Id": "Deployments-10166",
+    "ProjectId": "Projects-201",
+    "EnvironmentId": "Environments-1",
+    "ReleaseVersion": "0.0.2-current",
+    "State": "Success",
+    "HasWarningsOrErrors": false,
+    "IsCurrent": true,
+    "IsPrevious": false,
+    "IsCompleted": true
+  }, {
+    "Id": "Deployments-10177",
+    "ProjectId": "Projects-201",
+    "EnvironmentId": "Environments-1",
+    "ReleaseVersion": "0.0.1-previous",
+    "State": "Success",
+    "HasWarningsOrErrors": false,
+    "IsCurrent": false,
+    "IsPrevious": true,
+    "IsCompleted": true
+  }, {
+    "Id": "Deployments-10178",
+    "ProjectId": "Projects-201",
+    "EnvironmentId": "Environments-5",
+    "ReleaseVersion": "0.0.1-current",
+    "State": "Success",
+    "HasWarningsOrErrors": false,
+    "IsCurrent": true,
+    "IsPrevious": false,
+    "IsCompleted": true
+  }],
+  "Links": {}
+}
