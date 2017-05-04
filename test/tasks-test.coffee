@@ -11,6 +11,8 @@ Helper = require('hubot-test-helper')
 OctopusClient = require 'octopus-deploy-client'
 StatusReport = require '../src/status-report'
 MatchProjects = require '../src/match-projects'
+OctoHelpers = require('../src/helpers').octoHelpers
+DeployHelper = require '../src/deploy-helper'
 
 helper = new Helper('../src/scripts/tasks.coffee')
 
@@ -20,27 +22,35 @@ describe 'hubot-octopus-deploy', ->
       resources:
         dashboard:
           get: stub()
-        ,projects:
-          id: stub()
+        projects:
+          id: (x) -> x
+          releases: (x) -> x
+        environments: 
+          get: (x) -> x
+        deployments:
+          post: (x) -> x
     @octopusClient = stub OctopusClient, 'Create', =>
       @client
-
+    
+    releaseGet = stub()
+    releaseGet.returns(Promise.resolve({status: 200, body: 'release'}))
+    
+    idStub = stub(@client.resources.projects, 'id').returns
+      get: stub().returns Promise.resolve({status: 200, body: 'projects'}) 
+      releases: {get: releaseGet}
+    @matchProjectsMock = stub(MatchProjects, 'find')
+    
+    @environmentStub = stub(@client.resources.environments, 'get')
+    @environmentStub.returns Promise.resolve({status: 200, body: 'environments'})
+  
   beforeEach ->
-    @room = helper.createRoom()
+    # no http calls to be made to the hubot server
+    @room = helper.createRoom(httpd: false)
 
   after ->
     OctopusClient.Create.restore()
 
-  afterEach ->
-    @room.destroy()
-
   describe 'octo status', ->
-    before ->
-      releaseGet = stub()
-      releaseGet.returns(Promise.resolve({status: 200, body: 'release'}))
-      @client.resources.projects.id.returns({releases: {get: releaseGet}})
-      @matchProjectsMock = stub(MatchProjects, 'find')
-
     context 'search with matching regex', ->
       beforeEach (done)->
         @dashboard = Projects: [
@@ -76,3 +86,21 @@ describe 'hubot-octopus-deploy', ->
 
       it 'should extend the information with latest release', ->
         expect(@extendWithLatestReleaseStub).to.have.been.called
+
+  describe 'octo deploy', () ->
+    before ->
+      stub(OctoHelpers, 'slugIt').returns('slug')      
+    
+    context 'valid request', ->
+      before ->
+        stub(DeployHelper, 'getReleaseId').returns 'rel'
+        stub(DeployHelper, 'getEnvironmentId').returns 'env'
+        @deployStub = stub(@client.resources.deployments, 'post')
+        @deployStub.returns Promise.resolve({status: 200, body: 'deployments'})
+      
+      beforeEach (done) ->
+        @room.user.say('alice', '@hubot octo deploy svc.me > 1.0.3 > prod').then =>
+          done()           
+      
+      it 'should post deployment', () ->
+        expect(@deployStub).to.have.been.called
