@@ -12,6 +12,7 @@
 #  hubot octo active tasks - Returns active tasks
 #  hubot octo last X tasks - Returns last X tasks up to 30
 #  hubot octo status <criteria> - Returns project's deployed information and latest
+#  hubot octo deploy <project name> > <ver> > <env> - deploys version of project to the environment 
 #
 # Author:
 #  bigbam505
@@ -22,7 +23,8 @@ HttpHelpers = require('../helpers').httpHelpers
 OctoHelpers = require('../helpers').octoHelpers
 StatusReport = require '../status-report'
 MatchProjects = require '../match-projects'
-
+DeployHelper = require '../deploy-helper'
+  
 baseUrl = process.env.HUBOT_OCTO_ENDPOINT || ""
 apiKey = process.env.HUBOT_OCTO_APIKEY || ""
 
@@ -81,3 +83,34 @@ module.exports = (robot) ->
       msg.send "#{displays[...].join("\n\n")}"
     .catch (error) ->
       msg.reply error
+
+  robot.respond /octo deploy (.+) > ([0-9a-zA-Z.-]+) > (.+)/i, (msg) ->
+    params =
+      project: msg.match[1]
+      version: msg.match[2]
+      env: msg.match[3]
+
+    msg.send "finding project #{params.project}"
+    slugName = OctoHelpers.slugIt params.project
+    client.resources.projects.id(slugName).get()
+    .then(HttpHelpers.validateSuccess)
+    .then(HttpHelpers.getBody)
+    .then(DeployHelper.getProjectId)
+    .then (projectId) ->
+      releaseRequest = client.resources.projects.id(projectId).releases.get()
+      environmentsRequest = client.resources.environments.get()
+      preparedPromises = [releaseRequest, environmentsRequest].map (request) ->
+        request.then(HttpHelpers.validateSuccess).then(HttpHelpers.getBody)
+      Promise.all(preparedPromises)
+    .then (responses) ->
+      deploymentParams =
+        ReleaseId:  DeployHelper.getReleaseId responses[0], params.version
+        EnvironmentId: DeployHelper.getEnvironmentId responses[1], params.env
+        Comments: "Deploy by hubot on behalf of #{msg.message.user.name}"
+      client.resources.deployments.post(deploymentParams)
+    .then(HttpHelpers.validateSuccess)
+    .then(HttpHelpers.getBody)
+    .then (response) ->
+      msg.send "Deploying #{params.project} v#{params.version} to #{params.env} by #{msg.message.user.name}"
+    .catch (error) ->
+      msg.reply "Unable to deploy: #{error.body.ErrorMessage}"
