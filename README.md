@@ -60,7 +60,9 @@ hubot>> Retrieving status for you now...
          
                          Latest        DI                      TI            PR        Corporate    
          ms2.Endpoint  0.1.0 (ok)   0.1.0 (success)   unknown (unknown)   unknown (unknown)   unknown (unknown) 
+```
 
+```
 user1>> hubot octo deploy Member.Endpoint > 1.2.0.95 > TI
 hubot>> Deploying Member.Endpoint v1.2.0.95 to TI by user1
 ```
